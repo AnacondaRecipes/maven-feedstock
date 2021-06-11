@@ -11,8 +11,8 @@ source:
 
 build:
   number: 0
-  # Ignore non-x86_64 platforms due to missing OpenJDKs
-  skip: True  # [win32 or not x86]
+  # Ignore some non-x86_64 platforms due to missing OpenJDKs
+  skip: True  # [win32 or (not x86 and not (linux and aarch64))]
   missing_dso_whitelist:
     # package includes libjansi DSO for various platforms, ignore them
     - '**libutil.so.1'
