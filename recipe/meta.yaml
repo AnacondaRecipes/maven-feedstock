@@ -1,4 +1,4 @@
-{% set version = "3.8.1" %}
+{% set version = "3.8.4" %}
 
 package:
   name: maven
@@ -7,7 +7,7 @@ package:
 source:
   fn: apache-maven-{{ version }}-bin.tar.gz
   url: http://apache.hippo.nl/maven/maven-3/{{ version }}/binaries/apache-maven-{{ version }}-bin.tar.gz
-  sha256: b98a1905eb554d07427b2e5509ff09bd53e2f1dd7a0afa38384968b113abef02
+  sha256: 2cdc9c519427bb20fdc25bef5a9063b790e4abd930e7b14b4e9f4863d6f9f13c
 
 build:
   number: 0
