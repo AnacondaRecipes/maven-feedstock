@@ -23,7 +23,7 @@ test:
 
 about:
   home: https://maven.apache.org
-  license: Apachev2
+  license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
   summary: A software project management and comprehension tool.
@@ -31,6 +31,8 @@ about:
     Apache Maven is a software project management and comprehension tool.
     Based on the concept of a project object model (POM), Maven can manage
     a project's build, reporting and documentation from a central piece of information.
+  dev_url: https://github.com/apache/maven
+  doc_url: https://maven.apache.org/guides/index.html
 
 extra:
   recipe-maintainers:
