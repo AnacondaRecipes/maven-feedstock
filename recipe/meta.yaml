@@ -1,25 +1,17 @@
-{% set version = "3.8.1" %}
+{% set name = "maven" %}
+{% set version = "3.9.9" %}
 
 package:
-  name: maven
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  fn: apache-maven-{{ version }}-bin.tar.gz
-  url: http://apache.hippo.nl/maven/maven-3/{{ version }}/binaries/apache-maven-{{ version }}-bin.tar.gz
-  sha256: b98a1905eb554d07427b2e5509ff09bd53e2f1dd7a0afa38384968b113abef02
+  url: https://dlcdn.apache.org/maven/maven-3/{{ version }}/binaries/apache-maven-{{ version }}-bin.tar.gz
+  sha256: 7a9cdf674fc1703d6382f5f330b3d110ea1b512b51f1652846d9e4e8a588d766
 
 build:
   number: 0
-  # Ignore some non-x86_64 platforms due to missing OpenJDKs
-  skip: True  # [win32 or (not x86 and not (linux and aarch64))]
-  missing_dso_whitelist:
-    # package includes libjansi DSO for various platforms, ignore them
-    - '**libutil.so.1'
-    - '**libutil.so.9'
-    - '**libc.so.6'
-    - '**libc.so.7'
-    - '**libSystem.B.dylib'
+  skip: true  # [s390x]
 
 requirements:
   run:
@@ -31,7 +23,7 @@ test:
 
 about:
   home: https://maven.apache.org
-  license: Apachev2
+  license: Apache-2.0
   license_family: Apache
   license_file: LICENSE
   summary: A software project management and comprehension tool.
@@ -39,6 +31,8 @@ about:
     Apache Maven is a software project management and comprehension tool.
     Based on the concept of a project object model (POM), Maven can manage
     a project's build, reporting and documentation from a central piece of information.
+  dev_url: https://github.com/apache/maven
+  doc_url: https://maven.apache.org/guides/index.html
 
 extra:
   recipe-maintainers:

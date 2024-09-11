@@ -9,4 +9,3 @@ cd $PREFIX/bin
 ln -s ../opt/maven/bin/* .
 
 rm -fr $target/lib/ext/
-
